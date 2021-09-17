@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<link rel="stylesheet" type="text/css" href="./index.css">
+	<title>Welcome to Tokyo Games 2020</title>
+</head>
+<body>
+
+	<div class="main_container">
+		
+		<div class="nav">
+				<div class="logo inblock">
+
+					<div class="circle1 blue"></div>
+					<div class="circle1 black"></div>
+					<div class="circle1 red"></div>
+					<div class="circle1 yellow"></div>
+					<div class="circle1 green"></div>
+				</div>	
+				<div class="inblock">
+					<h1 class="heading">OLYMPIC GAME TOKYO 2020 </h1>
+				</div>
+		</div>
+		<div class="nav-small">
+			<div class="inblock linkkdiv">
+				<a href="./index.html">Home</a>
+			</div>
+			<div class="inblock linkkdiv">
+				<a href="./schedule.html">Schedule & Results</a>
+			</div>
+			<div class="inblock linkkdiv">
+				<a href="./sports.html">Sports</a>
+			</div>
+			<div class="inblock linkkdiv">
+				<a href="./contact.html">Contact</a>
+			</div>
+
+		</div>
+		<hr />
+
+		<div>
+			<button class="left" onclick="slideShow('-')"><</button>
+			<img src="img/0.jpg" alt="" style=" width: 1348px; height: 500px;"  id="img_load">
+			<button class="right" onclick="slideShow('+')"  >></button>
+
+			<div class="abs blackshade">
+				<p id="cont" class="content"></p>
+			</div>
+		</div>
+
+	</div>
+
+<!-- ##################### Footer ############################# -->
+
+<div class="fotcon">
+    <div style="text-align: center; position: relative; top: 50px;">
+        <h3>© 2021 – Rahul Gopan - 
+            All rights reserved.</h3>
+    </div>
+</div>
+
+
+<script>
+	var arr = ["0", "1", "2","3","4","5"];
+	var arrText = ["<h1>Theme: <br/>Moving Forward: United by Emotion <br/>Location: Tokyo, Japan</h1>","<h2>From historic firsts to moments of shared pain and joy, Tokyo 2020 was an Olympic Games to remember.</h2><br/>TOKYO, JAPAN <br/> AUGUST 02: Joint gold medalists Mutaz Essa Barshim of Team Qatar and Gianmarco Tamberi of Team Italy celebrate on the podium during the medal ceremony for the Mens High Jump on day ten of the Tokyo 2020 Olympic Games at Olympic Stadium on August 02, 2021 in Tokyo","<h2>From historic firsts to moments of shared pain and joy, Tokyo 2020 was an Olympic Games to remember.</h2><br/>TOKYO, JAPAN <br/> AUGUST 02: Joint gold medalists Mutaz Essa Barshim of Team Qatar and Gianmarco Tamberi of Team Italy celebrate on the podium during the medal ceremony for the Mens High Jump on day ten of the Tokyo 2020 Olympic Games at Olympic Stadium on August 02, 2021 in Tokyo","<h2>Australia's most successful Olympian: Emma McKeon.</h2><br/>Rio 2016:🥇4x100m Freestyle,🥈4x200m Freestyle,🥈4x100m Medley,🥉200m Freestyle <br/>Tokyo 2020:,🥇4x100m Medley,🥇4x100m Freestyle,🥇100m Freestyle,🥇50m Freestyle,🥉4x200m Freestyle,🥉4x100m Butterfly,🥉100m Butterfly", "<h1>“This is Olympic spirit, and you’ve got it 100%”</h1><br/>When Lotte Miller (NOR) crossed the finish line of the women’s triathlon in 24th place, she sat down to recover, as you might expect. But when she saw Belgian athlete Claire Michel, who was in last place, trying to finish the race with what turned out to be a calf spasm, her “heart sank”, she told USA TODAY"]
+	var index = 0;
+	document.getElementById('cont').innerHTML = arrText[0];
+
+
+	function slideShow(data){
+		console.log(index)
+		if(index == 0 && data == '-'){
+			index = 5;
+			document.getElementById('img_load').src = "./img/"+arr[5]+".jpg";
+			document.getElementById('cont').innerHTML = arrText[index];
+
+		}
+		if(index == 4 && data == '+'){
+			index = 0
+			document.getElementById('img_load').src = "./img/"+arr[0]+".jpg";
+			document.getElementById('cont').innerHTML = arrText[index];
+
+		}
+
+		if(index != 0 || index != 5){
+
+			if(data == '+'){
+				++index;
+				document.getElementById('img_load').src = "./img/"+arr[index]+".jpg";
+				document.getElementById('cont').innerHTML = arrText[index];
+
+			}
+			if(data == '-'){
+				--index;
+				document.getElementById('img_load').src = "./img/"+arr[index]+".jpg";
+				document.getElementById('cont').innerHTML = arrText[index];
+
+			}
+
+		}
+	}
+
+</script>
+
+</body>
+</html>
